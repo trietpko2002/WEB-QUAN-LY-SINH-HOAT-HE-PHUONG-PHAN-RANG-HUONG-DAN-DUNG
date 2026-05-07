@@ -1,4 +1,4 @@
-# 🌟 HỆ THỐNG QUẢN LÝ SINH HOẠT HÈ CẤP PHƯỜNG (BẢN PRO)
+# 🌟 HỆ THỐNG QUẢN LÝ SINH HOẠT HÈ
 
 > **Một nền tảng quản lý thanh thiếu niên tham gia sinh hoạt hè tại địa phương thông minh, bảo mật và hoàn toàn tự động.**
 > Tích hợp Groq AI, tự động chia nhóm, xuất báo cáo PDF/Excel, bảo mật Cloudflare Turnstile và giao diện chuẩn Web-App hiện đại.
