@@ -1,109 +1,137 @@
-# 🇻🇳 HỆ THỐNG QUẢN LÝ SINH HOẠT HÈ - CHUYỂN ĐỔI SỐ TOÀN DIỆN (CONCEPT v9.0)
+# 🌟 HỆ THỐNG QUẢN LÝ SINH HOẠT HÈ CẤP PHƯỜNG (BẢN PRO)
 
-> **❝ Không chỉ là quản lý - Đó là trải nghiệm số hóa đầy cảm hứng cho Thanh niên ❞**
-
-![Badge](https://img.shields.io/badge/Status-Stable-success) ![Badge](https://img.shields.io/badge/Platform-Google_Ecosystem-blue) ![Badge](https://img.shields.io/badge/License-OpenSource-orange) ![Badge](https://img.shields.io/badge/Version-9.0.2-purple)
-
----
-
-## 🌟 1. Tầm nhìn & Sứ mệnh (The Vision)
-
-Công tác Đoàn và sinh hoạt hè tại địa phương đang đứng trước bài toán lớn: **Làm sao để vừa quản lý chặt chẽ, minh bạch, lại vừa tạo được sự hứng thú, hiện đại trong mắt đoàn viên thanh niên?**
-
-Hệ thống này là câu trả lời. Không còn những file Excel rời rạc, không còn báo cáo giấy thủ công. Đây là giải pháp **"All-in-One"** chạy trên nền tảng Serverless, biến công việc quản lý khô khan thành một trải nghiệm công nghệ thú vị, mang đậm hơi thở của Gen Z.
+> **Một nền tảng quản lý thanh thiếu niên tham gia sinh hoạt hè tại địa phương thông minh, bảo mật và hoàn toàn tự động.**
+> Tích hợp Groq AI, tự động chia nhóm, xuất báo cáo PDF/Excel, bảo mật Cloudflare Turnstile và giao diện chuẩn Web-App hiện đại.
 
 ---
 
-## 🎨 2. Điểm Nhấn Đột Phá: "Đa Vũ Trụ" Giao Diện
-
-Khác biệt hoàn toàn với các phần mềm hành chính cứng nhắc, hệ thống sở hữu **Cơ chế Giao diện Thích ứng (Adaptive Theme Engine)** cực kỳ mạnh mẽ ngay từ màn hình Đăng nhập (`login.html`).
-
-### ✨ Cá nhân hóa trải nghiệm (Personalization)
-Hệ thống hiểu và ghi nhớ sở thích người dùng thông qua công nghệ **Local Storage**. Một khi bạn chọn giao diện yêu thích, hệ thống sẽ tự động kích hoạt nó ở những lần đăng nhập sau trên cùng thiết bị.
-
-* **Kho giao diện 20+ Themes:**
-    * 🌊 **Thiên nhiên:** Đại dương, Nắng vàng, Mưa rơi (Rain effect), Tuyết trắng.
-    * 🚀 **Viễn tưởng:** Galaxy (Sao bay), Cyberpunk (Neon), Matrix (Mưa code xanh).
-    * 🎉 **Lễ hội:** Tết Nguyên Đán (Pháo hoa), Trung Thu, Noel.
-    * 🔥 **Trendy:** Jack J97 (Đom đóm), Meme Mode.
-* **Custom Mode (Mới):** Cho phép người dùng **tự tải lên** ảnh nền hoặc Video (tối đa 50MB) để làm giao diện riêng biệt.
-
-### 🎮 Gamification & Tương tác
-* **Audio Experience:** Tích hợp trình phát nhạc ZingMP3 mini ngay trong hệ thống, giúp buổi sinh hoạt thêm sôi động.
-* **Interactive UI:** Hiệu ứng con trỏ mèo (Cat paw), pháo hoa khi click chuột, dòng chữ chạy... tạo cảm giác thân thiện, xóa bỏ khoảng cách giữa "người dùng" và "phần mềm".
+## 📑 MỤC LỤC
+1. [ Bảng Phân Quyền (Role Matrix)](#-bảng-phân-quyền)
+2. [👦 Hướng dẫn dành cho Học sinh / Thanh niên](#1-dành-cho-học-sinh--thanh-niên)
+3. [👨‍💼 Hướng dẫn dành cho Quản lý Nhóm](#2-dành-cho-quản-lý-nhóm)
+4. [👑 Hướng dẫn dành cho Quản trị viên (Admin)](#3-dành-cho-quản-trị-viên-admin)
+5. [💡 Các tính năng Nâng cao (Deep Dive)](#4-các-tính-năng-nâng-cao)
 
 ---
 
-## ⚙️ 3. Kiến Trúc Kỹ Thuật (Technical Stack)
+## 📊 BẢNG PHÂN QUYỀN
 
-Dự án chứng minh rằng **chi phí 0 đồng** vẫn có thể tạo ra sản phẩm chất lượng cao nhờ tận dụng tối đa hệ sinh thái Google.
-
-* **Backend (Core):** Google Apps Script (GAS) - Xử lý logic phía máy chủ, bảo mật API.
-* **Database:** Google Spreadsheet - Real-time, dễ dàng trích xuất, sao lưu và phân quyền.
-* **Frontend (Visual):**
-    * **UI Framework:** AdminLTE 3.2 + Bootstrap 4 (Responsive Mobile-first).
-    * **Logic:** jQuery & Vanilla JS.
-    * **Effects Library:** Canvas Confetti (Pháo hoa), Toastr (Thông báo), SweetAlert2 (Popup đẹp mắt).
-* **Bảo mật:**
-    * Mã hóa MD5 (cơ bản) cho các định danh file.
-    * Token xác thực phiên làm việc.
-
----
-
-## 🚀 4. Hệ Sinh Thái Chức Năng (Ecosystem)
-
-Hệ thống được cấu trúc thành 3 phân hệ kết nối chặt chẽ, đáp ứng nhu cầu của mọi đối tượng:
-
-### A. Phân hệ Tác Nghiệp & Cá Nhân (Manager Workspace)
-*Dành cho Bí thư chi đoàn/Phụ trách nhóm.*
-
-* **Trung tâm Điều hành (`index.html`):**
-    * **Điểm danh 1 chạm (Smart Attendance):** Tối ưu hóa cho mobile. Hỗ trợ import Excel nếu ấn trên nền web không được.
-    * **Quỹ nhóm minh bạch:** Tự động tính toán thu/chi, hiển thị số dư tồn quỹ theo thời gian thực.
-    * **Xếp loại:** xếp loại học sinh đầy đủ.
-    * **Tiện ích:** Trung tâm tải file, gửi kiến nghị kèm ảnh minh chứng.
-
-* **Quản lý Tài khoản Cá nhân (`profile.html`):** **🆕 MỚI**
-    * **Thông tin định danh:** Người quản lý xem và cập nhật thông tin liên hệ, đơn vị công tác của chính mình.
-    * **Bảo mật:** Tính năng đổi mật khẩu an toàn, xem nhật ký hoạt động cá nhân để phát hiện đăng nhập lạ.
-
-### B. Phân hệ Giám sát (Supervisor Portal)
-*Giao diện: `supervisor.html` & `supervisor_profile.html`*
-*Dành cho cấp Quản lý*
-
-* **Real-time Analytics:** Biểu đồ phân tích dữ liệu nhân sự, tỷ lệ chuyên cần của từng khu phố.
-* **Deep Inspection (Soi chiếu):** Supervisor có thể truy cập sâu vào hồ sơ chi tiết của bất kỳ học sinh nào (`supervisor_profile.html`) để kiểm tra chéo (Cross-check) độ chính xác của báo cáo từ cấp dưới.
-* **Xuất báo cáo 1-Click:** Xuất toàn bộ danh sách, bảng chấm công ra file Excel tiêu chuẩn.
-
-### C. Phân hệ Quản trị (Admin Control)
-*Giao diện: `admin.html`*
-*Trung tâm kỹ thuật cao nhất.*
-
-* **Chế độ Bảo trì (Maintenance Mode):** Chủ động khóa hệ thống khi cập nhật, hiển thị màn hình chờ.
-* **Backup & Restore:** Sao lưu toàn bộ Database về máy cá nhân (JSON) và phục hồi khi cần thiết.
-* **Quản lý người dùng:** Phân quyền, thêm/sửa/xóa tài khoản, reset mật khẩu cho các Manager.
+| Tính năng | Học Sinh (Public) | Quản Lý (Manager) | Quản Trị (Admin) |
+| :--- | :---: | :---: | :---: |
+| **Đăng ký tham gia** | ✅ | ✅ | ✅ |
+| **Tra cứu sđt quản lý** | ✅ | ✅ | ✅ |
+| **Đăng nhập hệ thống** | ❌ | ✅ (Chỉ thấy nhóm mình) | ✅ (Thấy toàn bộ) |
+| **Sửa thông tin học sinh** | ❌ | ✅ (Chỉ nhóm mình) | ✅ (Toàn bộ) |
+| **Thêm mới / Xóa / Điểm danh** | ❌ | ✅ (Chỉ nhóm mình) | ✅ (Toàn bộ) |
+| **Chuyển học sinh sang nhóm khác** | ❌ | ⏳ (Gửi yêu cầu, chờ duyệt) | ✅ (Chuyển ngay) |
+| **Thống kê Biểu đồ & Xuất PDF** | ❌ | ❌ | ✅ |
+| **Tạo & Chia Nhóm Tự động** | ❌ | ❌ | ✅ |
+| **Nhập/Xuất Excel & Backup JSON**| ❌ | ❌ | ✅ |
+| **Dùng Trợ lý AI (Groq)** | ❌ | ❌ | ✅ |
 
 ---
 
-## 📸 5. Hướng Dẫn Triển Khai (Deployment)
+## 👦 1. DÀNH CHO HỌC SINH / THANH NIÊN
+*(Giao diện bên ngoài trang chủ, không cần đăng nhập)*
 
-Dễ dàng cài đặt chỉ trong 4 bước - Không cần thuê Server, không cần mua tên miền.
+### 📝 Đăng ký Sinh hoạt hè
+- Truy cập vào đường link hệ thống do địa phương cung cấp.
+- Tại màn hình chính, nhấn vào nút **ĐĂNG KÝ SINH HOẠT HÈ**.
+- Hệ thống sẽ mở ra một cửa sổ Form điền thông tin (Họ tên, SĐT Zalo, Trường, Lớp, Chi đoàn, Địa chỉ...).
+- Nhấn **Gửi** và chờ thông báo chữ "Thành công".
+- Thông tin của bạn sẽ được tự động lưu vào cơ sở dữ liệu và chuyển trạng thái thành "Chưa thông báo".
 
-1.  **Khởi tạo Database:** Tạo Google Sheet theo mẫu (Sheet: `users`, `students`, `logs`, `attendance`, v.v...).
-2.  **Cài đặt Script:** Copy mã nguồn vào Google Apps Script của Sheet đó.
-3.  **Cấu hình:** Thay thế `SPREADSHEET_ID` trong `Code.gs` bằng ID file của bạn.
-4.  **Deploy:** Chọn "New Deployment" -> "Web App" -> Access: "Anyone" -> **Lấy link và chạy ngay!**
+### 🔍 Tra cứu thông tin Bí thư / Quản lý
+- Dùng khi muốn chủ động liên hệ xin phép vắng hoặc hỏi lịch sinh hoạt.
+- Tại mục **Tra cứu Bí thư / Quản lý**, chọn tab **Chi Đoàn** hoặc **Nhóm**.
+- Chọn tên Chi đoàn/Nhóm của mình trong danh sách thả xuống.
+- Hệ thống hiển thị Tên và Số điện thoại. Bạn có thể **bấm trực tiếp vào số điện thoại** (trên smartphone) để gọi ngay lập tức.
+
+---
+
+## 👨‍💼 2. DÀNH CHO QUẢN LÝ NHÓM
+*Tài khoản được cấp bởi Admin Hệ thống.*
+
+### 🔐 Đăng nhập & Đổi mật khẩu
+1. Nhập **Tên đăng nhập** và **Mật khẩu** (Mật khẩu mặc định khi mới cấp thường là: `Abc@123`).
+2. Nhập mã xác nhận (Captcha) gồm 6 ký tự. Có thể bấm icon 🔄 để đổi mã nếu khó nhìn.
+3. Tick vào ô xác minh Cloudflare "Tôi không phải robot".
+4. **Bắt buộc đổi mật khẩu:** Nếu là lần đầu tiên đăng nhập, một bảng thông báo đỏ sẽ hiện ra yêu cầu bạn đổi mật khẩu mới (tối thiểu 6 ký tự) để bảo vệ nhóm của mình.
+
+### 📋 Quản lý danh sách thành viên
+- Sau khi đăng nhập, bạn chỉ nhìn thấy danh sách các học sinh/thanh niên **thuộc nhóm của mình**.
+- Nút **Sửa (Icon Cây bút)**: Giúp bạn cập nhật thông tin sai sót của học sinh.
+- Nút **Báo (Icon Clipboard)**: Bấm 1 lần, hệ thống sẽ copy nội dung chào mừng có sẵn tên, trường, sđt của người đó. Đồng thời, nhãn trạng thái tự đổi từ màu đỏ (Chưa báo) sang màu xanh (Đã báo).
+
+### 🔄 Xin chuyển nhóm cho học sinh
+- Nút **Chuyển Nhóm (Icon Mũi tên 2 chiều)**: Dùng khi học sinh xin qua nhóm khác để sinh hoạt cùng bạn bè.
+- Chọn nhóm muốn chuyển tới.
+- Hệ thống sẽ gắn một nhãn màu hồng **"🕒 Xin qua: [Tên nhóm]"** dưới tên người đó. Bạn phải chờ Admin duyệt thì dữ liệu mới thực sự biến mất khỏi danh sách của bạn.
+
+### 🙋‍♂️ Báo cáo Điểm danh
+- Bắt buộc làm sau mỗi buổi sinh hoạt. Trên thanh công cụ, nhấn nút xanh dương **Báo Cáo Điểm Danh**.
+- Hệ thống sẽ hiển thị danh sách tất cả học sinh trong nhóm.
+- Bạn chỉ cần **Tick chọn những ai VẮNG MẶT**.
+- Hệ thống tự động tính số người "Có mặt" và tổng hợp tên người vắng vào ô "Ghi chú". Nhấn **Lưu Báo Cáo** để nộp lên cho Admin.
 
 ---
 
-## 💡 6. Tầm nhìn & Tiềm năng mở rộng
+## 👑 3. DÀNH CHO QUẢN TRỊ VIÊN (ADMIN)
+*Tài khoản có toàn quyền quản trị, thấy toàn bộ dữ liệu.*
 
-Đây không chỉ là một phần mềm, đây là **bước đệm cho Chuyển đổi số** tại địa phương.
-* **Cộng đồng:** Mã nguồn mở cho phép nhân rộng mô hình sang các đơn vị khác.
+### 📊 Theo dõi Thống kê & Báo cáo
+- Thanh Dashboard ngay trên đầu hiển thị 4 thẻ: Tổng số, Đã báo, Chưa báo, và **Chờ duyệt** (Màu vàng).
+- Nút **Thống Kê (Icon Chart)**: Mở bảng biểu đồ trực quan (Biểu đồ tròn, cột thống kê Trường, Giới tính, Chi đoàn). Bạn có thể bấm nút **Xuất Báo Cáo PDF** để in báo cáo nộp cho cấp trên.
+- *Mẹo:* Bạn có thể bấm vào các cột/phần của biểu đồ, hệ thống sẽ tự động đóng biểu đồ và **lọc danh sách** theo đúng tiêu chí bạn vừa bấm!
 
-> **⚠️ TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM:**
-> Dự án là sản phẩm thử nghiệm (Proof of Concept) phục vụ cộng đồng. Dữ liệu được lưu trữ trên tài khoản Google của người dùng, đảm bảo quyền riêng tư và kiểm soát dữ liệu tuyệt đối.
+### 👥 Quản lý Danh mục (Chi đoàn & Nhóm)
+- **Quản lý Chi Đoàn (Nút Tím)**: Thêm, sửa, xóa Chi đoàn và nhập SĐT của Bí thư.
+- **Chia Nhóm (Nút Cam)**: 
+  - Tạo các nhóm mới, cấp tên tài khoản quản lý.
+  - Reset mật khẩu của quản lý về mặc định (`Abc@123`).
+  - Theo dõi trực tiếp **Tiến độ điểm danh** của từng nhóm (Tổng số, Có mặt, Ai vắng, Thời gian báo cáo lúc mấy giờ).
+  - **Tính năng Auto Group (Chia nhóm ngẫu nhiên):** Chọn 1 bộ lọc (VD: lọc riêng Nam), mở bảng Chia nhóm, nhập mật khẩu Admin và bấm Bắt đầu. Hệ thống sẽ xáo trộn ngẫu nhiên và chia đều các học sinh đang hiển thị vào tất cả các nhóm!
+
+### ✔️ Xử lý Yêu cầu Chuyển nhóm
+- Khi Quản lý nhóm gửi yêu cầu, số trên thẻ "Chờ duyệt" góc phải sẽ tăng lên.
+- Tại cột *Thao tác* của người đó, Admin sẽ thấy xuất hiện 2 nút: **[✓ Duyệt]** (Chấp nhận chuyển) hoặc **[✕ Hủy]** (Từ chối chuyển). Nhấn xong hệ thống sẽ xử lý ngay lập tức mà không tải lại trang.
+
+### 🤖 Trợ lý Phân tích Dữ liệu AI (GROQ AI)
+- Nhấn nút **Phân tích AI**.
+- Nhập API Key của Groq. Cung cấp Prompt (yêu cầu).
+- AI sẽ tự động thu thập số liệu hiện tại của phường và đưa ra các lời khuyên, kế hoạch, đánh giá thực trạng cực kỳ chuyên sâu bằng tiếng Việt.
+
+### 📢 Trình tạo Thông báo Tập thể
+- Lọc ra một danh sách (VD: Tìm những bạn lớp 10, chưa báo cáo).
+- Nhấn **Tạo Thông Báo**, điền Tiêu đề, Thời gian, Địa điểm. Bấm **Tạo Nội Dung**.
+- Nếu bạn tick vào ô checkbox *"Đồng thời cập nhật trạng thái đã báo cho X người"*, khi bạn bấm Copy, lập tức toàn bộ X người đang hiển thị sẽ được tick xanh "Đã báo" tự động. Rất tiện để không phải bấm thủ công từng người.
 
 ---
-*Phát triển bởi [Triết Võ] - Tổ Công nghệ Đoàn phường Phan Rang © 2026*
-*Liên hệ: [phanranggaming@gmail.com/0396385579]*
+
+## 💡 4. CÁC TÍNH NĂNG NÂNG CAO (DEEP DIVE)
+
+**1. Thao tác Hàng loạt (Bulk Actions)**
+- Tick chọn 1 hoặc nhiều ô vuông ở cột đầu tiên của danh sách.
+- Lập tức trên thanh công cụ sẽ mọc ra 2 nút: **Xóa Đã Chọn (Màu đỏ)** và **Đánh Dấu Đã Báo (Màu xanh)** kèm theo số lượng. Nhấn vào để thực hiện hàng loạt.
+
+**2. Nhập & Xuất dữ liệu Excel**
+- **Xuất Excel**: Lọc dữ liệu bạn muốn, bấm Xuất. File tải về (`.xlsx`) đã được tự động căn chỉnh độ rộng cột chuẩn chỉ, sẵn sàng in ấn.
+- **Nhập Excel**: Bấm Nhập Excel, chọn file `.xlsx`. Hệ thống thông minh sẽ tự động nhận diện các cột như: *Họ và Tên, Họ Tên, Giới tính, SDT, Lớp...* (không phân biệt viết hoa/thường) và import hàng nghìn bản ghi chỉ trong vài giây. Có xử lý cả lỗi ngày tháng Excel (dạng số Serial).
+
+**3. Hệ thống Sao lưu cực mạnh (Backup/Restore JSON)**
+- **Sao lưu**: Tải toàn bộ Database sạch về máy dưới dạng `.json`.
+- **Khôi phục**: Khi hệ thống bị lỗi hoặc bị xóa nhầm, bấm Khôi phục. Tính năng này vô cùng nguy hiểm vì nó **ghi đè và xóa sổ dữ liệu cũ**, do đó hệ thống bắt buộc Admin phải: *Nhập lại Mật khẩu Admin* + *Nhập Captcha*. Sau đó hệ thống sẽ cắt dữ liệu thành từng Chunk (gói 100 người) để upload, đảm bảo không bị lỗi Timeout của Google Script.
+
+**4. Bộ lọc đa tầng thời gian thực**
+- Thanh tìm kiếm: Cứ gõ là lọc (debounce nội bộ). Lọc Tên, Số điện thoại (chấp nhận cả gõ có cách hoặc dính liền), hoặc Mã TN.
+- Kết hợp bộ lọc: Bạn có thể chọn cùng lúc: *Nam + Sinh năm 2008 + Chưa báo + Mạng Viettel*... Dữ liệu sẽ trả về ngay lập tức không có độ trễ nhờ thuật toán JS lọc tại Client.
+
+**5. Tự động bảo toàn dữ liệu SĐT**
+- Mọi SĐT nhập qua Form, Web hay Excel đều được hệ thống ép kiểu bằng cách gắn dấu nháy đơn `'` ẩn phía trước. Đảm bảo Excel/Google Sheet không bao giờ ăn mất số `0` ở đầu số điện thoại của học sinh.
+
+---
+
+<div align="center">
+  <i>Xây dựng với chuẩn Web-App hiện đại (Google Apps Script + HTML/CSS/JS + API Fetch)</i><br>
+  <b>Tác giả: Triết Võ | Bản quyền © 2026 Tổ Công Nghệ Đoàn Phường</b>
+</div>
