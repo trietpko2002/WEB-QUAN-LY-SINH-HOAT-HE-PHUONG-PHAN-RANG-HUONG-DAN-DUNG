@@ -75,6 +75,7 @@ Hệ thống sẽ mở form nhập thông tin.
 ## ✍️ Bước 3: Điền thông tin
 Người dùng cần nhập đầy đủ:
 - Họ và tên
+- Giới tính
 - Ngày sinh
 - Trường / Lớp
 - Số điện thoại Zalo
