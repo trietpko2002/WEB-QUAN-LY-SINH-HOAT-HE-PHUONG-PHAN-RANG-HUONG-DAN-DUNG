@@ -7,7 +7,7 @@
 
 # 📸 GIAO DIỆN HỆ THỐNG
 
-![Hệ thống đăng ký sinh hoạt hè](./images/homepage.png)
+![Hệ thống đăng ký sinh hoạt hè](https://github.com/trietpko2002/WEB-QUAN-LY-SINH-HOAT-HE-PHUONG-PHAN-RANG-HUONG-DAN-DUNG/blob/main/homepage.png?raw=true)
 
 > Giao diện trang chủ của hệ thống đăng ký sinh hoạt hè.
 
