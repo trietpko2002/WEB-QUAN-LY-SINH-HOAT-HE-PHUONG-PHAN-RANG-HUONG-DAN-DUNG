@@ -64,9 +64,11 @@ Mở website đăng ký sinh hoạt hè do địa phương cung cấp.
 ---
 
 ## 🖱️ Bước 2: Nhấn nút đăng ký
-Tại giao diện chính, nhấn:
+Tại giao diện chính, nhấn nút:
 
 > **ĐĂNG KÝ SINH HOẠT HÈ**
+
+![Hệ thống đăng ký sinh hoạt hè](https://github.com/trietpko2002/WEB-QUAN-LY-SINH-HOAT-HE-PHUONG-PHAN-RANG-HUONG-DAN-DUNG/blob/main/dangky.png?raw=true)
 
 Hệ thống sẽ mở form nhập thông tin.
 
