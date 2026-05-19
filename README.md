@@ -1,137 +1,169 @@
-# 🌟 HỆ THỐNG QUẢN LÝ SINH HOẠT HÈ
+# 🌟 HỆ THỐNG ĐĂNG KÝ SINH HOẠT HÈ
 
-> **Một nền tảng quản lý thanh thiếu niên tham gia sinh hoạt hè tại địa phương thông minh, bảo mật và hoàn toàn tự động.**
-> Tích hợp Groq AI, tự động chia nhóm, xuất báo cáo PDF/Excel, bảo mật Cloudflare Turnstile và giao diện chuẩn Web-App hiện đại.
-
----
-
-## 📑 MỤC LỤC
-1. [ Bảng Phân Quyền (Role Matrix)](#-bảng-phân-quyền)
-2. [👦 Hướng dẫn dành cho Học sinh / Thanh niên](#1-dành-cho-học-sinh--thanh-niên)
-3. [👨‍💼 Hướng dẫn dành cho Quản lý Nhóm](#2-dành-cho-quản-lý-nhóm)
-4. [👑 Hướng dẫn dành cho Quản trị viên (Admin)](#3-dành-cho-quản-trị-viên-admin)
-5. [💡 Các tính năng Nâng cao (Deep Dive)](#4-các-tính-năng-nâng-cao)
+> **Nền tảng hỗ trợ đăng ký sinh hoạt hè trực tuyến dành cho thanh thiếu niên tại địa phương.**  
+> Hoạt động đơn giản, nhẹ, hiện đại với Google Apps Script và Google Sheets.
 
 ---
 
-## 📊 BẢNG PHÂN QUYỀN
+# 📸 GIAO DIỆN HỆ THỐNG
 
-| Tính năng | Học Sinh (Public) | Quản Lý (Manager) | Quản Trị (Admin) |
-| :--- | :---: | :---: | :---: |
-| **Đăng ký tham gia** | ✅ | ✅ | ✅ |
-| **Tra cứu sđt quản lý** | ✅ | ✅ | ✅ |
-| **Đăng nhập hệ thống** | ❌ | ✅ (Chỉ thấy nhóm mình) | ✅ (Thấy toàn bộ) |
-| **Sửa thông tin học sinh** | ❌ | ✅ (Chỉ nhóm mình) | ✅ (Toàn bộ) |
-| **Thêm mới / Xóa / Điểm danh** | ❌ | ✅ (Chỉ nhóm mình) | ✅ (Toàn bộ) |
-| **Chuyển học sinh sang nhóm khác** | ❌ | ⏳ (Gửi yêu cầu, chờ duyệt) | ✅ (Chuyển ngay) |
-| **Thống kê Biểu đồ & Xuất PDF** | ❌ | ❌ | ✅ |
-| **Tạo & Chia Nhóm Tự động** | ❌ | ❌ | ✅ |
-| **Nhập/Xuất Excel & Backup JSON**| ❌ | ❌ | ✅ |
-| **Dùng Trợ lý AI (Groq)** | ❌ | ❌ | ✅ |
+![Hệ thống đăng ký sinh hoạt hè](./images/homepage.png)
+
+> Giao diện trang chủ của hệ thống đăng ký sinh hoạt hè.
 
 ---
 
-## 👦 1. DÀNH CHO HỌC SINH / THANH NIÊN
-*(Giao diện bên ngoài trang chủ, không cần đăng nhập)*
-
-### 📝 Đăng ký Sinh hoạt hè
-- Truy cập vào đường link hệ thống do địa phương cung cấp.
-- Tại màn hình chính, nhấn vào nút **ĐĂNG KÝ SINH HOẠT HÈ**.
-- Hệ thống sẽ mở ra một cửa sổ Form điền thông tin (Họ tên, SĐT Zalo, Trường, Lớp, Chi đoàn, Địa chỉ...).
-- Nhấn **Gửi** và chờ thông báo chữ "Thành công".
-- Thông tin của bạn sẽ được tự động lưu vào cơ sở dữ liệu và chuyển trạng thái thành "Chưa thông báo".
-
-### 🔍 Tra cứu thông tin Bí thư / Quản lý
-- Dùng khi muốn chủ động liên hệ xin phép vắng hoặc hỏi lịch sinh hoạt.
-- Tại mục **Tra cứu Bí thư / Quản lý**, chọn tab **Chi Đoàn** hoặc **Nhóm**.
-- Chọn tên Chi đoàn/Nhóm của mình trong danh sách thả xuống.
-- Hệ thống hiển thị Tên và Số điện thoại. Bạn có thể **bấm trực tiếp vào số điện thoại** (trên smartphone) để gọi ngay lập tức.
+# 📑 MỤC LỤC
+1. [📌 Giới thiệu hệ thống](#-giới-thiệu-hệ-thống)
+2. [⚖️ So sánh với phương thức giấy tờ truyền thống](#️-so-sánh-với-phương-thức-giấy-tờ-truyền-thống)
+3. [👦 Hướng dẫn dành cho người đăng ký](#-hướng-dẫn-dành-cho-người-đăng-ký)
+4. [🔍 Tra cứu Bí thư Chi đoàn](#-tra-cứu-bí-thư-chi-đoàn)
+5. [📄 Thông tin nộp giấy sinh hoạt hè](#-thông-tin-nộp-giấy-sinh-hoạt-hè)
+6. [⚙️ Công nghệ sử dụng](#️-công-nghệ-sử-dụng)
 
 ---
 
-## 👨‍💼 2. DÀNH CHO QUẢN LÝ NHÓM
-*Tài khoản được cấp bởi Admin Hệ thống.*
+# 📌 GIỚI THIỆU HỆ THỐNG
 
-### 🔐 Đăng nhập & Đổi mật khẩu
-1. Nhập **Tên đăng nhập** và **Mật khẩu** (Mật khẩu mặc định khi mới cấp thường là: `Abc@123`).
-2. Nhập mã xác nhận (Captcha) gồm 6 ký tự. Có thể bấm icon 🔄 để đổi mã nếu khó nhìn.
-3. Tick vào ô xác minh Cloudflare "Tôi không phải robot".
-4. **Bắt buộc đổi mật khẩu:** Nếu là lần đầu tiên đăng nhập, một bảng thông báo đỏ sẽ hiện ra yêu cầu bạn đổi mật khẩu mới (tối thiểu 6 ký tự) để bảo vệ nhóm của mình.
+Hệ thống được xây dựng nhằm hỗ trợ:
+- Đăng ký sinh hoạt hè online nhanh chóng.
+- Tiếp nhận dữ liệu thanh niên trực tuyến.
+- Tự động lưu thông tin vào Google Sheets.
+- Hiển thị link tham gia nhóm Zalo chung sau khi đăng ký thành công.
+- Hỗ trợ tra cứu Bí thư Chi đoàn nhanh chóng.
+- Giảm tải việc ghi chép thủ công tại địa phương.
 
-### 📋 Quản lý danh sách thành viên
-- Sau khi đăng nhập, bạn chỉ nhìn thấy danh sách các học sinh/thanh niên **thuộc nhóm của mình**.
-- Nút **Sửa (Icon Cây bút)**: Giúp bạn cập nhật thông tin sai sót của học sinh.
-- Nút **Báo (Icon Clipboard)**: Bấm 1 lần, hệ thống sẽ copy nội dung chào mừng có sẵn tên, trường, sđt của người đó. Đồng thời, nhãn trạng thái tự đổi từ màu đỏ (Chưa báo) sang màu xanh (Đã báo).
-
-### 🔄 Xin chuyển nhóm cho học sinh
-- Nút **Chuyển Nhóm (Icon Mũi tên 2 chiều)**: Dùng khi học sinh xin qua nhóm khác để sinh hoạt cùng bạn bè.
-- Chọn nhóm muốn chuyển tới.
-- Hệ thống sẽ gắn một nhãn màu hồng **"🕒 Xin qua: [Tên nhóm]"** dưới tên người đó. Bạn phải chờ Admin duyệt thì dữ liệu mới thực sự biến mất khỏi danh sách của bạn.
-
-### 🙋‍♂️ Báo cáo Điểm danh
-- Bắt buộc làm sau mỗi buổi sinh hoạt. Trên thanh công cụ, nhấn nút xanh dương **Báo Cáo Điểm Danh**.
-- Hệ thống sẽ hiển thị danh sách tất cả học sinh trong nhóm.
-- Bạn chỉ cần **Tick chọn những ai VẮNG MẶT**.
-- Hệ thống tự động tính số người "Có mặt" và tổng hợp tên người vắng vào ô "Ghi chú". Nhấn **Lưu Báo Cáo** để nộp lên cho Admin.
+⚠️ **Lưu ý:**  
+Hệ thống chỉ hỗ trợ **đăng ký trực tuyến trước** để tiết kiệm thời gian xử lý.  
+Người đăng ký vẫn cần mang và nộp giấy sinh hoạt hè theo hướng dẫn của địa phương.
 
 ---
 
-## 👑 3. DÀNH CHO QUẢN TRỊ VIÊN (ADMIN)
-*Tài khoản có toàn quyền quản trị, thấy toàn bộ dữ liệu.*
+# ⚖️ SO SÁNH VỚI PHƯƠNG THỨC GIẤY TỜ TRUYỀN THỐNG
 
-### 📊 Theo dõi Thống kê & Báo cáo
-- Thanh Dashboard ngay trên đầu hiển thị 4 thẻ: Tổng số, Đã báo, Chưa báo, và **Chờ duyệt** (Màu vàng).
-- Nút **Thống Kê (Icon Chart)**: Mở bảng biểu đồ trực quan (Biểu đồ tròn, cột thống kê Trường, Giới tính, Chi đoàn). Bạn có thể bấm nút **Xuất Báo Cáo PDF** để in báo cáo nộp cho cấp trên.
-- *Mẹo:* Bạn có thể bấm vào các cột/phần của biểu đồ, hệ thống sẽ tự động đóng biểu đồ và **lọc danh sách** theo đúng tiêu chí bạn vừa bấm!
-
-### 👥 Quản lý Danh mục (Chi đoàn & Nhóm)
-- **Quản lý Chi Đoàn (Nút Tím)**: Thêm, sửa, xóa Chi đoàn và nhập SĐT của Bí thư.
-- **Chia Nhóm (Nút Cam)**: 
-  - Tạo các nhóm mới, cấp tên tài khoản quản lý.
-  - Reset mật khẩu của quản lý về mặc định (`Abc@123`).
-  - Theo dõi trực tiếp **Tiến độ điểm danh** của từng nhóm (Tổng số, Có mặt, Ai vắng, Thời gian báo cáo lúc mấy giờ).
-  - **Tính năng Auto Group (Chia nhóm ngẫu nhiên):** Chọn 1 bộ lọc (VD: lọc riêng Nam), mở bảng Chia nhóm, nhập mật khẩu Admin và bấm Bắt đầu. Hệ thống sẽ xáo trộn ngẫu nhiên và chia đều các học sinh đang hiển thị vào tất cả các nhóm!
-
-### ✔️ Xử lý Yêu cầu Chuyển nhóm
-- Khi Quản lý nhóm gửi yêu cầu, số trên thẻ "Chờ duyệt" góc phải sẽ tăng lên.
-- Tại cột *Thao tác* của người đó, Admin sẽ thấy xuất hiện 2 nút: **[✓ Duyệt]** (Chấp nhận chuyển) hoặc **[✕ Hủy]** (Từ chối chuyển). Nhấn xong hệ thống sẽ xử lý ngay lập tức mà không tải lại trang.
-
-### 🤖 Trợ lý Phân tích Dữ liệu AI (GROQ AI)
-- Nhấn nút **Phân tích AI**.
-- Nhập API Key của Groq. Cung cấp Prompt (yêu cầu).
-- AI sẽ tự động thu thập số liệu hiện tại của phường và đưa ra các lời khuyên, kế hoạch, đánh giá thực trạng cực kỳ chuyên sâu bằng tiếng Việt.
-
-### 📢 Trình tạo Thông báo Tập thể
-- Lọc ra một danh sách (VD: Tìm những bạn lớp 10, chưa báo cáo).
-- Nhấn **Tạo Thông Báo**, điền Tiêu đề, Thời gian, Địa điểm. Bấm **Tạo Nội Dung**.
-- Nếu bạn tick vào ô checkbox *"Đồng thời cập nhật trạng thái đã báo cho X người"*, khi bạn bấm Copy, lập tức toàn bộ X người đang hiển thị sẽ được tick xanh "Đã báo" tự động. Rất tiện để không phải bấm thủ công từng người.
+| Nội dung | Làm thủ công truyền thống | Hệ thống hiện tại |
+|---|---|---|
+| Khai báo thông tin | Viết tay trực tiếp | Điền form online |
+| Lưu dữ liệu | Ghi sổ / nhập tay | Lưu tự động Google Sheets |
+| Tìm Bí thư Chi đoàn | Hỏi nhiều nơi | Tra cứu trực tiếp |
+| Tham gia nhóm thông báo | Xin link riêng | Hệ thống hiện link tự động |
+| Tổng hợp danh sách | Làm thủ công | Có sẵn trên Google Sheets |
+| Tốc độ tiếp nhận | Chậm khi đông người | Xử lý nhanh |
+| Dễ sai sót | Cao | Giảm lỗi nhập liệu |
+| Dùng điện thoại | Không tiện | Tối ưu mobile |
+| Nộp giấy sinh hoạt hè | Bắt buộc | Vẫn bắt buộc |
+| Vai trò hệ thống | Không có | Hỗ trợ đăng ký trước để giảm thời gian làm thủ tục |
 
 ---
 
-## 💡 4. CÁC TÍNH NĂNG NÂNG CAO (DEEP DIVE)
+# 👦 HƯỚNG DẪN DÀNH CHO NGƯỜI ĐĂNG KÝ
 
-**1. Thao tác Hàng loạt (Bulk Actions)**
-- Tick chọn 1 hoặc nhiều ô vuông ở cột đầu tiên của danh sách.
-- Lập tức trên thanh công cụ sẽ mọc ra 2 nút: **Xóa Đã Chọn (Màu đỏ)** và **Đánh Dấu Đã Báo (Màu xanh)** kèm theo số lượng. Nhấn vào để thực hiện hàng loạt.
+## 📝 Bước 1: Truy cập hệ thống
+Mở website đăng ký sinh hoạt hè do địa phương cung cấp.
 
-**2. Nhập & Xuất dữ liệu Excel**
-- **Xuất Excel**: Lọc dữ liệu bạn muốn, bấm Xuất. File tải về (`.xlsx`) đã được tự động căn chỉnh độ rộng cột chuẩn chỉ, sẵn sàng in ấn.
-- **Nhập Excel**: Bấm Nhập Excel, chọn file `.xlsx`. Hệ thống thông minh sẽ tự động nhận diện các cột như: *Họ và Tên, Họ Tên, Giới tính, SDT, Lớp...* (không phân biệt viết hoa/thường) và import hàng nghìn bản ghi chỉ trong vài giây. Có xử lý cả lỗi ngày tháng Excel (dạng số Serial).
+---
 
-**3. Hệ thống Sao lưu cực mạnh (Backup/Restore JSON)**
-- **Sao lưu**: Tải toàn bộ Database sạch về máy dưới dạng `.json`.
-- **Khôi phục**: Khi hệ thống bị lỗi hoặc bị xóa nhầm, bấm Khôi phục. Tính năng này vô cùng nguy hiểm vì nó **ghi đè và xóa sổ dữ liệu cũ**, do đó hệ thống bắt buộc Admin phải: *Nhập lại Mật khẩu Admin* + *Nhập Captcha*. Sau đó hệ thống sẽ cắt dữ liệu thành từng Chunk (gói 100 người) để upload, đảm bảo không bị lỗi Timeout của Google Script.
+## 🖱️ Bước 2: Nhấn nút đăng ký
+Tại giao diện chính, nhấn:
 
-**4. Bộ lọc đa tầng thời gian thực**
-- Thanh tìm kiếm: Cứ gõ là lọc (debounce nội bộ). Lọc Tên, Số điện thoại (chấp nhận cả gõ có cách hoặc dính liền), hoặc Mã TN.
-- Kết hợp bộ lọc: Bạn có thể chọn cùng lúc: *Nam + Sinh năm 2008 + Chưa báo + Mạng Viettel*... Dữ liệu sẽ trả về ngay lập tức không có độ trễ nhờ thuật toán JS lọc tại Client.
+> **ĐĂNG KÝ SINH HOẠT HÈ**
 
-**5. Tự động bảo toàn dữ liệu SĐT**
-- Mọi SĐT nhập qua Form, Web hay Excel đều được hệ thống ép kiểu bằng cách gắn dấu nháy đơn `'` ẩn phía trước. Đảm bảo Excel/Google Sheet không bao giờ ăn mất số `0` ở đầu số điện thoại của học sinh.
+Hệ thống sẽ mở form nhập thông tin.
+
+---
+
+## ✍️ Bước 3: Điền thông tin
+Người dùng cần nhập đầy đủ:
+- Họ và tên
+- Ngày sinh
+- Trường / Lớp
+- Số điện thoại Zalo
+- Địa chỉ
+- Chi đoàn
+- Các thông tin cần thiết khác
+
+---
+
+## 📨 Bước 4: Gửi đăng ký
+Sau khi kiểm tra thông tin:
+- Nhấn nút **Gửi đăng ký**
+- Hệ thống sẽ xử lý tự động
+
+---
+
+## ✅ Bước 5: Hoàn tất đăng ký
+Sau khi đăng ký thành công:
+- Dữ liệu được lưu trực tiếp vào Google Sheets
+- Hệ thống hiển thị thông báo thành công
+- Đồng thời hiện link tham gia nhóm Zalo chung
+
+Người dùng chỉ cần bấm vào link để tham gia nhóm.
+
+---
+
+## 📄 Bước 6: Nộp giấy sinh hoạt hè
+Sau khi đăng ký online:
+- Người dùng vẫn cần nộp giấy sinh hoạt hè theo quy định địa phương.
+- Việc đăng ký online giúp:
+  - Tiết kiệm thời gian ghi thông tin
+  - Giảm ùn tắc khi tiếp nhận
+  - Hạn chế ghi sai dữ liệu
+  - Dễ tổng hợp danh sách quản lý
+
+---
+
+# 🔍 TRA CỨU BÍ THƯ CHI ĐOÀN
+
+Tính năng hỗ trợ thanh niên dễ dàng liên hệ cán bộ phụ trách.
+
+## Cách sử dụng
+1. Tại mục **Tra cứu Bí thư / Quản lý**
+2. Chọn Chi đoàn cần tìm
+3. Hệ thống sẽ hiển thị:
+- Họ tên Bí thư
+- Số điện thoại liên hệ
+
+Trên điện thoại, người dùng có thể bấm trực tiếp vào số điện thoại để gọi nhanh.
+
+---
+
+# 📄 THÔNG TIN NỘP GIẤY SINH HOẠT HÈ
+
+- **Thời gian nhận giấy:** Tháng 6 → Tháng 8
+- **Địa điểm:** Phòng Đoàn Thanh Niên phường Phan Rang
+- **Địa chỉ:** 06A đường 21/8, phường Phan Rang
+- **Lưu ý:** Vui lòng giữ lại giấy sinh hoạt hè khi có thông báo nộp.
+
+---
+
+# ⚙️ CÔNG NGHỆ SỬ DỤNG
+
+- **Google Apps Script (GAS)**
+- **Google Sheets Database**
+- **HTML / CSS / JavaScript**
+- **Fetch API**
+- **Responsive Web Design**
+
+---
+
+# ✨ TÍNH NĂNG NỔI BẬT
+
+- 🚀 Giao diện hiện đại, dễ sử dụng
+- 📱 Tối ưu cho điện thoại và máy tính
+- ☁️ Lưu dữ liệu trực tiếp lên Google Sheets
+- 🔗 Tự động hiện link nhóm Zalo
+- 🔍 Tra cứu Bí thư nhanh chóng
+- ⚡ Hoạt động nhẹ và ổn định
+- 🔐 Không cần đăng nhập
 
 ---
 
 <div align="center">
-  <i>Xây dựng với chuẩn Web-App hiện đại (Google Apps Script + HTML/CSS/JS + API Fetch)</i><br>
-  <b>Tác giả: Triết Võ | Bản quyền © 2026 Tổ Công Nghệ Đoàn Phường</b>
+
+### HỆ THỐNG ĐĂNG KÝ SINH HOẠT HÈ
+<i>Xây dựng theo chuẩn Web-App hiện đại bằng GAS + Google Sheets</i>
+
+<b>Tác giả: Triết Võ</b><br>
+Copyright © 2026 Tổ Công Nghệ Đoàn phường Phan Rang
+
 </div>
